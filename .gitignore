@@ -1,0 +1,9 @@
+node_modules/*/
+!node_modules/bpmn-js/
+!node_modules/bpmn-moddle/
+!node_modules/moddle/
+!node_modules/moddle-xml/
+public/app.bundled.js
+public/app.bundled.js.map
+public/vendor/
+tmp/

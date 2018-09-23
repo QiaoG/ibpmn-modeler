@@ -1,0 +1,102 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>bpmn-js modeler demo</title>
+
+  <link rel="stylesheet" href="vendor/bpmn-js/assets/diagram-js.css" />
+  <link rel="stylesheet" href="vendor/bpmn-js/assets/bpmn-font/css/bpmn-embedded.css" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <div class="content" id="js-drop-zone">
+
+    <div class="message intro">
+      <div class="note">
+        BPMN 设计器 <a id="js-create-diagram" href>创建demo</a> .
+      </div>
+    </div>
+
+    <div class="message error">
+      <div class="note">
+        <!-- p>BPMN 2.0 XML.</p -->
+
+        <div class="details">
+          <!--<span>cause of the problem</span>-->
+          <pre style="word-wrap: break-word;background: white;"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="canvas" id="js-canvas"></div>
+  </div>
+
+  <div class="io-tools">
+    <ul class="io-tool io-control io-control-list io-horizontal">
+      <li>
+        <button id="js-switch" >
+          显示xml
+        </button>
+      </li>
+    </ul>
+    <ul class="io-tool bpmn-control io-control io-control-list io-horizontal">
+      <li>
+        <button id="js-save" >
+          保存
+        </button>
+      </li>
+      <!--<li class="vr" style="margin-left: 2px"></li>-->
+      <li>
+        <a id="js-download-svg" href >
+          下载SVG
+        </a>
+      </li>
+    </ul>
+    <ul class="io-tool bpmn-control io-control io-control-list io-horizontal">
+      <li>
+        <button id="js-undo" >
+          撤销
+        </button>
+      </li>
+      <!--<li class="vr" style="margin-left: 2px;margin-bottom: 0px;"></li>-->
+      <li>
+        <button id="js-redo" >
+          恢复
+        </button>
+      </li>
+      <!--<li class="vr" style="margin-left: 2px"></li>-->
+      <li>
+        <button id="js-fresh" >
+          刷新
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="io-zoom-controls">
+
+    <ul class="bpmn-control io-zoom-reset io-control io-control-list">
+      <li>
+        <button title="复原" id="zoom-reset">
+          复原<!--<span class="icon-size-reset">复原</span>-->
+        </button>
+      </li>
+    </ul>
+
+    <ul class="bpmn-control io-zoom io-control io-control-list">
+      <li>
+        <button title="放大" id="zoom-in">
+          放大<!--<span class="icon-plus">放大</span>-->
+        </button>
+      </li>
+      <li>
+        <hr/>
+      </li>
+      <li>
+        <button href title="缩小" id="zoom-out">
+          缩小<!--<span class="icon-minus"></span>-->
+        </button>
+      </li>
+    </ul>
+  </div>
+  <script src="app.bundled.js"></script>
+</body>
+</html>
