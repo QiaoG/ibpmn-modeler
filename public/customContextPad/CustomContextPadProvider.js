@@ -9,7 +9,7 @@ import {is} from "bpmn-js/lib/util/ModelUtil";
 import {
   isExpanded,
   isEventSubProcess
-} from 'bpmn-js/lib//util/DiUtil';
+} from 'bpmn-js/lib/util/DiUtil';
 
 import {
   isAny
@@ -269,7 +269,7 @@ CustomContextPadProvider.prototype.getContextPadEntries = function (element) {
   }
 
 
-  if (false){ // !popupMenu.isEmpty(element, 'bpmn-replace')) {
+  if (!popupMenu.isEmpty(element, 'ibpmn-option')) {
     // Replace menu entry
     if(element.type === 'bpmn:ExclusiveGateway' ||
       element.type === 'bpmn:ParallelGateway' ||
@@ -288,7 +288,7 @@ CustomContextPadProvider.prototype.getContextPadEntries = function (element) {
               var position = assign(getReplaceMenuPosition(element), {
                 cursor: {x: event.x, y: event.y}
               });
-              popupMenu.open(element, 'bpmn-replace', position);
+              popupMenu.open(element, 'ibpmn-option', position);
             }
           }
         }

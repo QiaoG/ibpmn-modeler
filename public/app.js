@@ -8,6 +8,8 @@ import CustomContextPadProvider from './customContextPad/CustomContextPadProvide
 
 import CustomPaletteProvider from './CustomPaletteProvider';
 
+import CustomMenuProvider from './CustomMenuProvider';
+
 import diagramXML from '../resources/newDiagram.bpmn';
 
 
@@ -25,6 +27,10 @@ var customContextPadModule = {
   contextPadProvider: [ 'type', CustomContextPadProvider ]
 };
 
+var customMenuModule = {
+  replaceMenuProvider:['type',CustomMenuProvider]
+}
+
 var customPaletteModule = {
   paletteProvider: [ 'type', CustomPaletteProvider ]
 }
@@ -34,6 +40,7 @@ var modeler = new BpmnModeler({
   additionalModules: [
     customTranslateModule,
     customContextPadModule,
+    customMenuModule,
     customPaletteModule
   ]
 });
