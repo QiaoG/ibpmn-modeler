@@ -22,7 +22,7 @@ export default {
   'Divide into three Lanes': '拆分成3个泳道',
   'Add Lane below': '向下添加泳道',
   'Append compensation activity': 'Kompensation hinzufügen',
-  'Change type': '操作',
+  'Change type': '修改',
   'Connect using Association': 'Mit Assoziation verbinden',
   'Connect using Sequence/MessageFlow or Association': '连接',
   'Connect using DataInputAssociation': 'Mit DataInputAssociation verbinden',

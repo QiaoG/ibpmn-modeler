@@ -10,6 +10,8 @@ import CustomPaletteProvider from './CustomPaletteProvider';
 
 import CustomMenuProvider from './CustomMenuProvider';
 
+import Connection from 'diagram-js/lib/features/connect';
+
 import diagramXML from '../resources/newDiagram.bpmn';
 
 
@@ -47,6 +49,9 @@ var modeler = new BpmnModeler({
 
 var commandStack = modeler.get('commandStack');
 
+var elementRegistry = modeler.get('elementRegistry');
+var modeling = modeler.get('modeling');
+
 function createNewDiagram() {
   openDiagram(diagramXML);
 }
@@ -55,7 +60,7 @@ function openDiagram(xml) {
   modeler.importXML(xml, function (err) {
 
     if (err) {
-      flag = 1;
+      flag = -1;
       container
         .removeClass('with-diagram')
         .addClass('with-error');
@@ -68,12 +73,32 @@ function openDiagram(xml) {
       container
         .removeClass('with-error')
         .addClass('with-diagram');
+      if(xml.indexOf('xmlns:bpmn2') < 0) {//老版第一次载入
+        adaptBpmn();
+      }
     }
 
   });
 }
 
-function switchdiv(btn) {
+//适配老设计器生成的bpmn文件（xml）
+function adaptBpmn() {
+  console.info("适配老版本xml");
+  var eles = elementRegistry.filter(function (element, gfx) {
+    return element.type === "bpmn:SequenceFlow";
+  });
+  //modeling.removeElements(eles);
+  var s, t, p;
+  for(var i = 0; i < eles.length; i++){
+    s = eles[i].source;
+    t = eles[i].target;
+    p = eles[i].parent;
+    modeling.removeElements([eles[i]]);
+    modeling.connect(s,t,undefined,p);
+  }
+}
+
+function switched(btn) {
   if(flag === 0){
     flag = 1;
     container
@@ -117,53 +142,7 @@ function saveDiagram(done) {
   });
 }
 
-function registerFileDrop(container, callback) {
-
-  function handleFileSelect(e) {
-    e.stopPropagation();
-    e.preventDefault();
-
-    var files = e.dataTransfer.files;
-
-    var file = files[0];
-
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-
-      var xml = e.target.result;
-
-      callback(xml);
-    };
-
-    reader.readAsText(file);
-  }
-
-  function handleDragOver(e) {
-    e.stopPropagation();
-    e.preventDefault();
-
-    e.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-  }
-
-  container.get(0).addEventListener('dragover', handleDragOver, false);
-  container.get(0).addEventListener('drop', handleFileSelect, false);
-}
-
-
-// file drag / drop ///////////////////////
-
-// check file api availability
-if (!window.FileList || !window.FileReader) {
-  window.alert(
-    'Looks like you use an older browser that does not support drag and drop. ' +
-    'Try using Chrome, Firefox or the Internet Explorer > 10.');
-} else {
-  registerFileDrop(container, openDiagram);
-}
-
 // bootstrap diagram functions
-
 $(function() {
 
   $('#js-create-diagram').click(function(e) {
@@ -181,7 +160,15 @@ $(function() {
   });
 
   $('#js-switch').click(function (e) {
-    switchdiv($('#js-switch'));
+    if(flag === 0){
+      saveDiagram(function(err, xml) {
+        setEncoded(downloadLink, 'diagram.bpmn', err ? null : xml);
+        bpmnXML = xml;
+        switched($('#js-switch'));
+      });
+    }else {
+      switched($('#js-switch'));
+    }
   });
 
   $('#js-undo').click(function (e) {
@@ -235,10 +222,10 @@ $(function() {
       setEncoded(downloadSvgLink, 'diagram.svg', err ? null : svg);
     });
 
-    saveDiagram(function(err, xml) {
-      setEncoded(downloadLink, 'diagram.bpmn', err ? null : xml);
-      bpmnXML = xml;
-    });
+    // saveDiagram(function(err, xml) {
+    //   setEncoded(downloadLink, 'diagram.bpmn', err ? null : xml);
+    //   bpmnXML = xml;
+    // });
   }, 500);
 
   modeler.on('commandStack.changed', exportArtifacts);

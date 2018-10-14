@@ -87,6 +87,8 @@ CustomContextPadProvider.prototype.getContextPadEntries = function (element) {
   }
 
   function removeElement(e) {
+    console.info("remove element ...");
+    console.info(element);
     modeling.removeElements([element]);
   }
 
