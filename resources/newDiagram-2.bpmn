@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.activiti.org/test">
+    <bpmn2:process id="CSZZBLC" name="证照申请流程">
+        <bpmn2:startEvent id="start" name="">
+        </bpmn2:startEvent>
+        <bpmn2:endEvent id="end" name="">
+        </bpmn2:endEvent>
+        <bpmn2:userTask id="step_2a0e25fa-553d-2a6b-3a5e-28df9b933b83" name="1">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_be61e1b1-a9a5-1c15-3256-322e28906099" name="2">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_141e3a1b-8fcc-67a2-9c1e-8b6a65250e7a" name="3">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_f68a838c-9e4f-44a8-7e1f-39f3cb1620d4" name="4.1.1">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_5aa576e0-ee51-54ec-7edf-ad677accf9f8" name="4.2.1">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_7d406b8f-fbac-77d9-1f27-b144df788edd" name="4.1.2">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_0d1bf87a-3571-3f40-72ae-dca72b84619a" name="4.2.2">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:userTask id="step_1062fa55-3f6e-cce5-911c-6b2ddce68db3" name="5">
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener" />
+            </bpmn2:extensionElements>
+            <bpmn2:extensionElements>
+                <activiti:taskListener event="create" class="com.iwork.process.management.listener.RuntimeAssigneeListener"/>
+            </bpmn2:extensionElements>
+        </bpmn2:userTask>
+        <bpmn2:parallelGateway id="parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7" name="">
+        </bpmn2:parallelGateway>
+        <bpmn2:sequenceFlow id="SequenceFlow_0dimhm9" sourceRef="start" targetRef="step_2a0e25fa-553d-2a6b-3a5e-28df9b933b83" />
+        <bpmn2:sequenceFlow id="SequenceFlow_1pnvntb" sourceRef="step_2a0e25fa-553d-2a6b-3a5e-28df9b933b83" targetRef="step_be61e1b1-a9a5-1c15-3256-322e28906099" />
+        <bpmn2:sequenceFlow id="SequenceFlow_0eqy0q3" sourceRef="step_be61e1b1-a9a5-1c15-3256-322e28906099" targetRef="step_141e3a1b-8fcc-67a2-9c1e-8b6a65250e7a" />
+        <bpmn2:sequenceFlow id="SequenceFlow_1pa6yyq" sourceRef="step_141e3a1b-8fcc-67a2-9c1e-8b6a65250e7a" targetRef="parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7" />
+        <bpmn2:sequenceFlow id="SequenceFlow_0sietoz" sourceRef="parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7" targetRef="step_5aa576e0-ee51-54ec-7edf-ad677accf9f8" />
+        <bpmn2:sequenceFlow id="SequenceFlow_16g6226" sourceRef="parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7" targetRef="step_f68a838c-9e4f-44a8-7e1f-39f3cb1620d4" />
+        <bpmn2:sequenceFlow id="SequenceFlow_13xsumi" sourceRef="step_f68a838c-9e4f-44a8-7e1f-39f3cb1620d4" targetRef="step_7d406b8f-fbac-77d9-1f27-b144df788edd" />
+        <bpmn2:sequenceFlow id="SequenceFlow_05qv7xb" sourceRef="step_5aa576e0-ee51-54ec-7edf-ad677accf9f8" targetRef="step_0d1bf87a-3571-3f40-72ae-dca72b84619a" />
+        <bpmn2:sequenceFlow id="SequenceFlow_0s9s9rq" sourceRef="step_7d406b8f-fbac-77d9-1f27-b144df788edd" targetRef="step_1062fa55-3f6e-cce5-911c-6b2ddce68db3" />
+        <bpmn2:sequenceFlow id="SequenceFlow_0l7167q" sourceRef="step_0d1bf87a-3571-3f40-72ae-dca72b84619a" targetRef="step_1062fa55-3f6e-cce5-911c-6b2ddce68db3" />
+        <bpmn2:sequenceFlow id="SequenceFlow_1ewbp9g" sourceRef="step_1062fa55-3f6e-cce5-911c-6b2ddce68db3" targetRef="end" />
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_CSZZBLC">
+        <bpmndi:BPMNPlane id="BPMNPlane_CSZZBLC" bpmnElement="CSZZBLC">
+            <bpmndi:BPMNShape id="BPMNShape_start" bpmnElement="start">
+                <omgdc:Bounds x="31" y="142" width="30" height="30" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_end" bpmnElement="end">
+                <omgdc:Bounds x="1561" y="145" width="30" height="30" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_2a0e25fa-553d-2a6b-3a5e-28df9b933b83" bpmnElement="step_2a0e25fa-553d-2a6b-3a5e-28df9b933b83">
+                <omgdc:Bounds x="119" y="128" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_be61e1b1-a9a5-1c15-3256-322e28906099" bpmnElement="step_be61e1b1-a9a5-1c15-3256-322e28906099">
+                <omgdc:Bounds x="306" y="127" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_141e3a1b-8fcc-67a2-9c1e-8b6a65250e7a" bpmnElement="step_141e3a1b-8fcc-67a2-9c1e-8b6a65250e7a">
+                <omgdc:Bounds x="484" y="129" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_f68a838c-9e4f-44a8-7e1f-39f3cb1620d4" bpmnElement="step_f68a838c-9e4f-44a8-7e1f-39f3cb1620d4">
+                <omgdc:Bounds x="864" y="79" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_5aa576e0-ee51-54ec-7edf-ad677accf9f8" bpmnElement="step_5aa576e0-ee51-54ec-7edf-ad677accf9f8">
+                <omgdc:Bounds x="862" y="213" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_7d406b8f-fbac-77d9-1f27-b144df788edd" bpmnElement="step_7d406b8f-fbac-77d9-1f27-b144df788edd">
+                <omgdc:Bounds x="1113" y="79" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_0d1bf87a-3571-3f40-72ae-dca72b84619a" bpmnElement="step_0d1bf87a-3571-3f40-72ae-dca72b84619a">
+                <omgdc:Bounds x="1121" y="213" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_step_1062fa55-3f6e-cce5-911c-6b2ddce68db3" bpmnElement="step_1062fa55-3f6e-cce5-911c-6b2ddce68db3">
+                <omgdc:Bounds x="1344" y="131" width="130" height="60" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape id="BPMNShape_parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7" bpmnElement="parallelGatewayeeb6becf-2586-c166-2727-33037daa45b7">
+                <omgdc:Bounds x="729" y="135" width="40" height="40" />
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge id="SequenceFlow_0dimhm9_di" bpmnElement="SequenceFlow_0dimhm9">
+                <omgdi:waypoint x="61" y="157" />
+                <omgdi:waypoint x="90" y="157" />
+                <omgdi:waypoint x="90" y="158" />
+                <omgdi:waypoint x="119" y="158" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_1pnvntb_di" bpmnElement="SequenceFlow_1pnvntb">
+                <omgdi:waypoint x="249" y="158" />
+                <omgdi:waypoint x="278" y="158" />
+                <omgdi:waypoint x="278" y="157" />
+                <omgdi:waypoint x="306" y="157" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_0eqy0q3_di" bpmnElement="SequenceFlow_0eqy0q3">
+                <omgdi:waypoint x="436" y="157" />
+                <omgdi:waypoint x="460" y="157" />
+                <omgdi:waypoint x="460" y="159" />
+                <omgdi:waypoint x="484" y="159" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_1pa6yyq_di" bpmnElement="SequenceFlow_1pa6yyq">
+                <omgdi:waypoint x="614" y="159" />
+                <omgdi:waypoint x="672" y="159" />
+                <omgdi:waypoint x="672" y="155" />
+                <omgdi:waypoint x="729" y="155" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_0sietoz_di" bpmnElement="SequenceFlow_0sietoz">
+                <omgdi:waypoint x="749" y="175" />
+                <omgdi:waypoint x="749" y="243" />
+                <omgdi:waypoint x="862" y="243" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_16g6226_di" bpmnElement="SequenceFlow_16g6226">
+                <omgdi:waypoint x="749" y="135" />
+                <omgdi:waypoint x="749" y="109" />
+                <omgdi:waypoint x="864" y="109" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_13xsumi_di" bpmnElement="SequenceFlow_13xsumi">
+                <omgdi:waypoint x="994" y="109" />
+                <omgdi:waypoint x="1113" y="109" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_05qv7xb_di" bpmnElement="SequenceFlow_05qv7xb">
+                <omgdi:waypoint x="992" y="243" />
+                <omgdi:waypoint x="1121" y="243" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_0s9s9rq_di" bpmnElement="SequenceFlow_0s9s9rq">
+                <omgdi:waypoint x="1243" y="109" />
+                <omgdi:waypoint x="1294" y="109" />
+                <omgdi:waypoint x="1294" y="161" />
+                <omgdi:waypoint x="1344" y="161" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_0l7167q_di" bpmnElement="SequenceFlow_0l7167q">
+                <omgdi:waypoint x="1251" y="243" />
+                <omgdi:waypoint x="1298" y="243" />
+                <omgdi:waypoint x="1298" y="161" />
+                <omgdi:waypoint x="1344" y="161" />
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge id="SequenceFlow_1ewbp9g_di" bpmnElement="SequenceFlow_1ewbp9g">
+                <omgdi:waypoint x="1474" y="161" />
+                <omgdi:waypoint x="1518" y="161" />
+                <omgdi:waypoint x="1518" y="160" />
+                <omgdi:waypoint x="1561" y="160" />
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
