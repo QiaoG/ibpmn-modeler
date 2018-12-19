@@ -76,6 +76,7 @@ function openDiagram(xml) {
       if(xml.indexOf('xmlns:bpmn2') < 0) {//老版第一次载入
         adaptBpmn();
       }
+      modeler.get('canvas').zoom('fit-viewport');
     }
 
   });
