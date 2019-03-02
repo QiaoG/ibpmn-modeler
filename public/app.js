@@ -39,6 +39,7 @@ var customPaletteModule = {
 
 var modeler = new BpmnModeler({
   container: '#js-canvas',
+  keyboard: {bindTo:document},
   additionalModules: [
     customTranslateModule,
     customContextPadModule,
@@ -76,7 +77,7 @@ function openDiagram(xml) {
       if(xml.indexOf('xmlns:bpmn2') < 0) {//老版第一次载入
         adaptBpmn();
       }
-      modeler.get('canvas').zoom('fit-viewport');
+      //modeler.get('canvas').zoom('fit-viewport');
     }
 
   });
@@ -117,6 +118,44 @@ function switched(btn) {
     btn.text('显示xml');
     $('.bpmn-control').removeClass('xml');
   }
+}
+
+function showKeyboardDialog() {
+  var t = $('.keybindings-dialog'), n = navigator.platform;
+  /Mac/.test(n) ? t.find(".bindings-default").remove() : t.find(".bindings-mac").remove();
+  S(t);
+
+}
+
+function S(e) {
+  var t = e.find(".content");
+
+  function n(e) {
+    e.stopPropagation()
+  }
+
+  e["addClass"]("open");
+  t.on("click", n);
+  e.on("click", function i(r) {
+    e["removeClass"]("open");
+    e.off("click", i);
+    t.off("click", n)
+  })
+}
+
+function toggleFullscreen() {
+  var e, t = document.querySelector("html");
+  e = t, document.fullscreenElement || document.mozFullScreenElement
+  || document.webkitFullscreenElement
+  || document.msFullscreenElement ? document.exitFullscreen ? document.exitFullscreen()
+    : document.msExitFullscreen ? document.msExitFullscreen()
+      : document.mozCancelFullScreen ? document.mozCancelFullScreen()
+        : document.webkitExitFullscreen && document.webkitExitFullscreen()
+    : e.requestFullscreen ? e.requestFullscreen()
+      : e.msRequestFullscreen ? e.msRequestFullscreen()
+        : e.mozRequestFullScreen ? e.mozRequestFullScreen()
+          : document.documentElement.webkitRequestFullscreen && e.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT)
+
 }
 
 function save() {
@@ -202,6 +241,12 @@ $(function() {
       e.preventDefault();
       e.stopPropagation();
     }
+  });
+  $('#js-keyboard').click(function (e) {
+    showKeyboardDialog();
+  });
+  $('#js-full').click(function (e) {
+    toggleFullscreen();
   });
 
   function setEncoded(link, name, data) {

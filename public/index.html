@@ -70,6 +70,22 @@
       </li>
     </ul>
   </div>
+  <div class="io-editing-tools">
+    <ul class="io-tool io-control io-control-list io-horizontal">
+      <li>
+        <button title="显示键盘快捷方式" id="js-keyboard">
+          快捷键<!--<span class="icon-keyboard"> </span>-->
+        </button>
+      </li>
+    </ul>
+    <ul class="io-tool io-control io-control-list io-horizontal">
+      <li>
+        <button title="全屏显示" id="js-full">
+          全屏<!--<span class="icon-resize-full"> </span>-->
+        </button>
+      </li>
+    </ul>
+  </div>
   <div class="io-zoom-controls">
 
     <ul class="bpmn-control io-zoom-reset io-control io-control-list">
@@ -95,6 +111,120 @@
         </button>
       </li>
     </ul>
+  </div>
+  <div class="io-dialog keybindings-dialog" jswidget="keybindings-dialog">
+
+    <div class="content bindings-mac">
+      <h1>快捷键</h1>
+      <table>
+        <tbody>
+        <tr>
+          <td>撤销</td>
+          <td class="binding">⌘ + Z</td>
+        </tr>
+        <tr>
+          <td>恢复</td>
+          <td class="binding">⌘ + ⇧ + Z</td>
+        </tr>
+        <tr>
+          <td>选择所有元素</td>
+          <td class="binding">⌘ + A</td>
+        </tr>
+        <tr>
+          <td>垂直滚动</td>
+          <td class="binding">⌥ + Scrolling</td>
+        </tr>
+        <tr>
+          <td>水平滚动</td>
+          <td class="binding">⌥ + ⇧ + Scrolling</td>
+        </tr>
+        <tr>
+          <td>直接编辑</td>
+          <td class="binding">E</td>
+        </tr>
+        <tr>
+          <td>手型工具</td>
+          <td class="binding">H</td>
+        </tr>
+        <tr>
+          <td>套索工具</td>
+          <td class="binding">L</td>
+        </tr>
+        <tr>
+          <td>参照线</td>
+          <td class="binding">S</td>
+        </tr>
+        <tr>
+          <td>移动所选元素</td>
+          <td class="binding"><code>方向键</code></td>
+        </tr>
+        <tr>
+          <td>快速移动所选元素</td>
+          <td class="binding"><code>⇧ + 方向键</code></td>
+        </tr>
+        <tr>
+          <td>移动画布</td>
+          <td class="binding"><code>⌘ + 方向键</code></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content bindings-default">
+      <h1>快捷键</h1>
+      <table>
+        <tbody>
+        <tr>
+          <td>撤销</td>
+          <td class="binding"><code>ctrl + Z</code></td>
+        </tr>
+        <tr>
+          <td>恢复</td>
+          <td class="binding"><code>ctrl + ⇧ + Z</code></td>
+        </tr>
+        <tr>
+          <td>选择所有</td>
+          <td class="binding"><code>ctrl + A</code></td>
+        </tr>
+        <tr>
+          <td>垂直滚动</td>
+          <td class="binding"><code>ctrl + 鼠标滚动键</code></td>
+        </tr>
+        <tr>
+          <td>横向滚动</td>
+          <td class="binding"><code>ctrl + ⇧ + 鼠标滚动键</code></td>
+        </tr>
+        <tr>
+          <td>直接编辑</td>
+          <td class="binding"><code>E</code></td>
+        </tr>
+        <tr>
+          <td>手型工具</td>
+          <td class="binding"><code>H</code></td>
+        </tr>
+        <tr>
+          <td>套索工具</td>
+          <td class="binding"><code>L</code></td>
+        </tr>
+        <tr>
+          <td>参照线</td>
+          <td class="binding"><code>S</code></td>
+        </tr>
+        <tr>
+          <td>移动所选元素</td>
+          <td class="binding"><code>方向键</code></td>
+        </tr>
+        <tr>
+          <td>快速移动所选元素</td>
+          <td class="binding"><code>⇧ + 方向键</code></td>
+        </tr>
+        <tr>
+          <td>移动画布</td>
+          <td class="binding"><code>ctrl + 方向键</code></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
   <script src="app.bundled.js"></script>
 </body>
