@@ -10,6 +10,7 @@ export default {
   'Create Task' : '创建任务',
   'Create User Task' : '创建用户任务',
   'Create Service Task' : '创建服务任务',
+  'Create Receive Task' : '创建接收任务',
   'Append End Event' : '附加结束事件',
   'Append Exclusive Gateway' : '附加单一网关',
   'Append Parallel Gateway' : '附加并行网关',
