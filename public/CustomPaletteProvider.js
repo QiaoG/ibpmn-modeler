@@ -142,7 +142,7 @@ CustomPaletteProvider.prototype.getPaletteEntries = function(element) {
       'bpmn:UserTask', 'activity', 'bpmn-icon-user-task',translate('Create User Task')
     ),
     'create.service-task': createAction(
-      'bpmn:ServiceTask', 'activity', 'bpmn-icon-service-task',translate('Create Service Task')
+      'bpmn:ReceiveTask', 'activity', 'bpmn-icon-service-task',translate('Create Receive Task')
     ),
     // 'create.data-object': createAction(
     //   'bpmn:DataObjectReference', 'data-object', 'bpmn-icon-data-object'

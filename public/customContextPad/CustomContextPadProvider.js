@@ -256,10 +256,10 @@ CustomContextPadProvider.prototype.getContextPadEntries = function (element) {
           'bpmn-icon-user-task',
           translate('Append User Task')
         ),
-        'append.append-server-task': appendAction(
-          'bpmn:ServiceTask',
+        'append.append-receive-task': appendAction(
+          'bpmn:ReceiveTask',
           'bpmn-icon-service-task',
-          translate('Append Service Task')
+          translate('Append Receive Task')
         ) //,
         // 'append.intermediate-event': appendAction(
         //   'bpmn:IntermediateThrowEvent',
@@ -277,7 +277,7 @@ CustomContextPadProvider.prototype.getContextPadEntries = function (element) {
       element.type === 'bpmn:ParallelGateway' ||
       element.type === 'bpmn:Task' ||
       element.type === 'bpmn:UserTask' ||
-      element.type === 'bpmn:ServiceTask')
+      element.type === 'bpmn:ReceiveTask')
     {
       assign(actions, {
         'replace': {

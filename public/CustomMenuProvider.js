@@ -61,15 +61,36 @@ CustomMenuProvider.prototype.getEntries = function(element) {
   var rules = this._rules;
 
   var menuEntries = [];
+  console.info(businessObject)
+  if(businessObject.$type === 'bpmn:ServiceTask') {
+    menuEntries.push(this._createMenuEntry({
+      label: "菜单1",
+      actionName: "ibpmn-menu-1",
+      className: "bpmn-icon-manual"
+    }, element, function () {
+      console.info(businessObject);
+      alert("菜单1\n");
 
-  menuEntries.push(this._createMenuEntry({label:"菜单1",actionName:"ibpmn-menu-1",className:"bpmn-icon-manual"}, element,function() {
-    console.info(businessObject);
-    alert("菜单1\n");
+    }));
+    menuEntries.push(this._createMenuEntry({
+      label: "菜单2",
+      actionName: "ibpmn-menu-2",
+      className: "bpmn-icon-manual"
+    }, element, function () {
+      alert("菜单2\n");
+    }));
 
-  }));
-  menuEntries.push(this._createMenuEntry({label:"菜单2",actionName:"ibpmn-menu-1",className:"bpmn-icon-manual"}, element,function() {
-    alert("菜单2\n");
-  }));
+  }else{
+    menuEntries.push(this._createMenuEntry({
+      label: "菜单3",
+      actionName: "ibpmn-menu-3",
+      className: "bpmn-icon-manual"
+    }, element, function () {
+      console.info(businessObject);
+      alert("菜单3\n");
+
+    }));
+  }
   return menuEntries;
 
 }
